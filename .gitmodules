@@ -1,0 +1,3 @@
+[submodule "lib/SSD1306_OLED_PICO"]
+	path = lib/SSD1306_OLED_PICO
+	url = https://github.com/gavinlyonsrepo/SSD1306_OLED_PICO.git

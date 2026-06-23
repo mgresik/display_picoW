@@ -33,6 +33,8 @@ project(LED_TABLE C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
+add_subdirectory(lib/SSD1306_OLED_PICO)
+
 # Add executable. Default name is the project name, version 0.1
 
 add_executable(LED_TABLE LED_TABLE.c )
@@ -46,7 +48,8 @@ pico_enable_stdio_usb(LED_TABLE 0)
 
 # Add the standard library to the build
 target_link_libraries(LED_TABLE
-        pico_stdlib)
+        pico_stdlib 
+        SSD1306_OLED)
 
 # Add the standard include files to the build
 target_include_directories(LED_TABLE PRIVATE
