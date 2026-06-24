@@ -1,0 +1,2 @@
+GP8 - SDA (I2C)
+GP9 - SCL (I2C)
