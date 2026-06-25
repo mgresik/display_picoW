@@ -3,6 +3,7 @@
 #include "hardware/spi.h"
 #include "hardware/i2c.h"
 #include "hardware/uart.h"
+#include "lib/led_driver/driver.hpp"
 
 // SPI Defines
 // We are going to use SPI 0, and allocate it to the following GPIO pins
@@ -35,6 +36,7 @@
 int main()
 {
     stdio_init_all();
+    sleep_ms(2000);
 
     // SPI initialisation. This example will use SPI at 1MHz.
     spi_init(SPI_PORT, 1000*1000);
@@ -63,6 +65,17 @@ int main()
     // Set datasheet for more information on function select
     gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);
     gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
+
+    //---------------------------//
+    SSD1306 oled(I2C_PORT, I2C_SDA, I2C_SCL, 0x3C);
+    oled.init();
+
+    oled.drawString(0, 0, "Hello, Pico W!", true);
+    oled.drawString(0, 16, "I2C OLED", true);
+    oled.drawString(0, 32, "0.91 inch", true);
+    oled.update();
+
+    //---------------------------//
     
     // Use some the various UART functions to send out data
     // In a default system, printf will also output via the default UART
