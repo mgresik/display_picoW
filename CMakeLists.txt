@@ -35,7 +35,9 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(LED_TABLE LED_TABLE.c )
+add_executable(LED_TABLE LED_TABLE.cpp 
+                        lib/led_driver/driver.cpp
+    )
 
 pico_set_program_name(LED_TABLE "LED_TABLE")
 pico_set_program_version(LED_TABLE "0.1")

@@ -70,9 +70,9 @@ int main()
     SSD1306 oled(I2C_PORT, I2C_SDA, I2C_SCL, 0x3C);
     oled.init();
 
-    oled.drawString(0, 0, "Hello, Pico W!", true);
-    oled.drawString(0, 16, "I2C OLED", true);
-    oled.drawString(0, 32, "0.91 inch", true);
+    oled.drawString(0, 0, "Hello, Tanya!", true);
+    oled.drawString(0, 16, "I love you, my sweety!", true);
+    // oled.drawString(0, 32, "0.91 inch", true);
     oled.update();
 
     //---------------------------//
